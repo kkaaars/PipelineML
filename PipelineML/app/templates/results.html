@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Extracted Products</title>
+</head>
+<body>
+    <h1>Extracted Product Names</h1>
+    <p><strong>From URL:</strong> {{ url }}</p>
+
+    {% if error %}
+      <p style="color:red;">⚠ {{ error }}</p>
+    {% endif %}
+
+    {% if products %}
+        <ul>
+        {% for item in products %}
+            <li>{{ item }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No products found.</p>
+    {% endif %}
+
+    <p><a href="/">← Back to form</a></p>
+</body>
+</html>
